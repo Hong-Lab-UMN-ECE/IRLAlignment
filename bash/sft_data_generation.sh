@@ -62,13 +62,13 @@ REWARD_BASE=EleutherAI/pythia-6.9b-deduped
 EVALUATION_REWARD_MODEL_PATH=vwxyzjn/EleutherAI_pythia-6.9b-deduped__reward__tldr
 REWARD_REVISION=reward__44413__1708628552
 
-SFT_BASE=EleutherAI/pythia-6.9b-deduped
-SFT_MODEL_PATH=vwxyzjn/EleutherAI_pythia-6.9b-deduped__ppo_left_padding_new_nowhiten_reward__tldr
-SFT_REVISION=ppo_left_padding_new_nowhiten_reward__44413__1710465193
+# SFT_BASE=EleutherAI/pythia-6.9b-deduped
+# SFT_MODEL_PATH=vwxyzjn/EleutherAI_pythia-6.9b-deduped__ppo_left_padding_new_nowhiten_reward__tldr
+# SFT_REVISION=ppo_left_padding_new_nowhiten_reward__44413__1710465193
 
-# SFT_BASE=EleutherAI/pythia-2.8b-deduped
-# SFT_MODEL_PATH=vwxyzjn/EleutherAI_pythia-2.8b-deduped__ppo_left_padding_new_nowhiten_reward__tldr
-# SFT_REVISION=ppo_left_padding_new_nowhiten_reward__44413__1710356835
+SFT_BASE=EleutherAI/pythia-2.8b-deduped
+SFT_MODEL_PATH=vwxyzjn/EleutherAI_pythia-2.8b-deduped__ppo_left_padding_new_nowhiten_reward__tldr
+SFT_REVISION=ppo_left_padding_new_nowhiten_reward__44413__1710356835
 
 DATA_FOLDER_PATH=generated_data/sft_model_evaluation
 

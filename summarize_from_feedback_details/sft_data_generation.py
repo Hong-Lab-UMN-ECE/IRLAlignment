@@ -444,7 +444,7 @@ def evaluate(evaluation_reward_model, policy, tokenizer, dataloader, generation_
 if __name__ == "__main__":
     args, accelerator = parse_args()
     local_seed = args.seed + accelerator.process_index * 100003  # Prime
-
+    print("=====================================================")
     # load dataset
     dataset = load_dataset(args.query_dataset, split="train")
     dataset = dataset.with_format("torch", columns=["query_token", "reference_response_token"])
@@ -593,9 +593,9 @@ if __name__ == "__main__":
 
     update = 0
     eval_split = list(eval_dataloaders.keys())[0]
-
+    import itertools
     with torch.no_grad():
-        for split in ["train", "validation", "test"]:
+        for split in ["train", "validation"]:
         #for split in ["validation", "test"]:
         # for split in ["train"]:
             accelerator.print('the size of the dataloaders is ', len(eval_dataloaders[split]))

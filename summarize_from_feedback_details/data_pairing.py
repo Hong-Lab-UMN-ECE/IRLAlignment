@@ -606,7 +606,7 @@ if __name__ == "__main__":
     eval_split = list(eval_dataloaders.keys())[0]
 
     with torch.no_grad():
-        for split in ["validation"]:
+        for split in ["train","validation"]:
         #for split in ["validation", "test"]:
         #for split in ["validation"]:
             accelerator.print('the size of the dataloaders is ', len(eval_dataloaders[split]))

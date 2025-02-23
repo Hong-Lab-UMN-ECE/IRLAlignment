@@ -68,7 +68,7 @@ EVALUATION_REWARD_MODEL_BASE=EleutherAI/pythia-6.9b-deduped
 EVALUATION_REWARD_MODEL_PATH=vwxyzjn/EleutherAI_pythia-6.9b-deduped__reward__tldr
 EVALUATION_REWARD_REVISION=reward__44413__1708628552
 
-REFERENCE_DATASET_FOLDER_PATH=generated_data/sft_model_evaluation/vwxyzjn_EleutherAI_pythia-2.8b-deduped__ppo_left_padding_new_nowhiten_reward__tldr/
+REFERENCE_DATASET_FOLDER_PATH=generated_data/sft_model_evaluation/vwxyzjn_EleutherAI_pythia-2.8b-deduped__ppo_left_padding_new_nowhiten_reward__tldr
 
 GENERATION_MODEL_PATH=models/EleutherAI/pythia-1b-deduped/demonstration_trained_sft_44413
 
@@ -88,20 +88,20 @@ do
 
     #DATA_FOLDER_PATH=generated_data/EleutherAI/pythia-1b-deduped/IRL_pairwise_comparisons_iter_4_concatenated
 
-    # poetry run accelerate launch --config_file deepspeed.yaml \
-    #     summarize_from_feedback_details/data_pairing.py \
-    #     --local_micro_batch_size=$local_micro_batch_size \
-    #     --base_model=$MODEL_BASE \
-    #     --model_path=$GENERATION_MODEL_PATH \
-    #     --evaluation_rm_base=$EVALUATION_REWARD_MODEL_BASE \
-    #     --evaluation_rm_path=$EVALUATION_REWARD_MODEL_PATH \
-    #     --evaluation_rm_revision=$EVALUATION_REWARD_REVISION \
-    #     --lr=$LR \
-    #     --deepspeed \
-    #     --reference_dataset_folder=$REFERENCE_DATASET_FOLDER_PATH \
-    #     --data_path=$DATA_FOLDER_PATH \
-    #     --local_eval_batch_size=16 \
-    #     --seed=$SEED
+    poetry run accelerate launch --config_file deepspeed.yaml \
+        summarize_from_feedback_details/data_pairing.py \
+        --local_micro_batch_size=$local_micro_batch_size \
+        --base_model=$MODEL_BASE \
+        --model_path=$GENERATION_MODEL_PATH \
+        --evaluation_rm_base=$EVALUATION_REWARD_MODEL_BASE \
+        --evaluation_rm_path=$EVALUATION_REWARD_MODEL_PATH \
+        --evaluation_rm_revision=$EVALUATION_REWARD_REVISION \
+        --lr=$LR \
+        --deepspeed \
+        --reference_dataset_folder=$REFERENCE_DATASET_FOLDER_PATH \
+        --data_path=$DATA_FOLDER_PATH \
+        --local_eval_batch_size=16 \
+        --seed=$SEED
         
     ############################################################################################################
     ############################################################################################################
@@ -134,20 +134,20 @@ do
 
     REWARD_RUN_NAME=DEVICE2_irl_reward_iter_${i}_model_${MODEL}
 
-    # poetry run accelerate launch --config_file deepspeed.yaml \
-    #     summarize_from_feedback_details/IRL_reward.py \
-    #     --base_model=$MODEL \
-    #     --sft_model_path=$SFT_MODEL_PATH \
-    #     --generated_dataset=$generated_data_path \
-    #     --constructed_validation_dataset=$constructed_validation_path \
-    #     --lr=$LR \
-    #     --run_name=$REWARD_RUN_NAME \
-    #     --total_episodes=10000 \
-    #     --deepspeed \
-    #     --track \
-    #     --output_dir=$REWARD_MODEL_PATH \
-    #     --local_eval_batch_size=$local_eval_batch_size \
-    #     --seed=$SEED
+    poetry run accelerate launch --config_file deepspeed.yaml \
+        summarize_from_feedback_details/IRL_reward.py \
+        --base_model=$MODEL \
+        --sft_model_path=$SFT_MODEL_PATH \
+        --generated_dataset=$generated_data_path \
+        --constructed_validation_dataset=$constructed_validation_path \
+        --lr=$LR \
+        --run_name=$REWARD_RUN_NAME \
+        --total_episodes=10000 \
+        --deepspeed \
+        --track \
+        --output_dir=$REWARD_MODEL_PATH \
+        --local_eval_batch_size=$local_eval_batch_size \
+        --seed=$SEED
 
     ############################################################################################################
     ############################################################################################################
