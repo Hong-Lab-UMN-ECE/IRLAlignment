@@ -39,5 +39,7 @@ We evaluate the proposed IRL method from the quality of the estimated reward mod
 - For the reward model, we evaluate the reward accuracy on a hold-out TL;DR preference dataset.
 - For the policy model, we evaluate the performance of the model according to the reward score from a hold-out 6.9B reward model and also the ChatGPT-evaluted win-rate compared with a high-quality reference dataset generated from a public 6.9B PPO model (vwxyzjn/EleutherAI_pythia-6.9b-deduped__ppo_left_padding_new_nowhiten_reward__tldr)
 
+<img width="823" alt="Screenshot 2025-02-23 at 10 28 39 PM" src="https://github.com/user-attachments/assets/e26e0767-1551-4ea7-8971-806b85944b5b" />
+
 ## Acknowledge
 - [The N+ Implementation Details of RLHF with PPO: A Case Study on TL;DR Summarization](https://github.com/vwxyzjn/summarize_from_feedback_details) 🔗
