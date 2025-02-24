@@ -1,6 +1,7 @@
 # IRLAlignment
 
-This is the codebase to reproduce the experiment in the paper [From Demonstrations to Rewards: Alignment Without Explicit Human Preferences](https://openreview.net/forum?id=mltelO89Ve)
+This is the codebase to reproduce the experiment in the paper:
+[From Demonstrations to Rewards: Alignment Without Explicit Human Preferences](https://openreview.net/forum?id=mltelO89Ve)
 
 ## Get started
 
